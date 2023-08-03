@@ -1,6 +1,21 @@
-function getComputerChoice(min, max) {
-return Math.floor(Math.random() * (max - min) + min);
-}
+/*
+Steps:
+Get bot choice
+get human choice
+compare choices
+announce winner
 
-// getComputerChoice(1, 3)
-console.log(getComputerChoice(1,4))
+/* 
+Rock = 1
+Paper = 2
+Scissors = 3
+*/
+
+function getComputerChoice(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+    }
+
+Botpick = (getComputerChoice(1,4))
+
+playerSelection = input()
+
