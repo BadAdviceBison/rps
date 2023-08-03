@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Hero;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.block1,
+.block2,
+.block3,
+.block4 {
+    padding: 0 20vw;
+}
+
+.block1 {
+    height: 60vh;
+    background: #1f2937;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+}
+
+.logo img{
+    width: 50px; 
+}
+
+.links {
+    display:flex;
+    font-weight: 700;
+    gap: 30px;
+}
+
+.links a {
+    text-decoration: none;
+    color:#e5e7eb;
+}
+
+.block1 .content {
+    display:flex;
+    justify-content: space-between;
+}
+
+.block1 .content .text {
+    display:flex;
+    flex-direction: column;
+    height: 50vh;
+    justify-content: center;
+}
+
+.content .text .bold h1 {
+    font-size: 48px;
+    font-weight: 1000;
+    color: #f9faf8;
+    width: 450px;
+}
+
+.content .text .unbold {
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+.content .image {
+    display:flex;
+    align-items: center;
+
+}
+
+.content img {
+    width: 280px;
+    height: 180px;
+    padding-left: 50px;
+}
+
+button.headercta,
+button.footercta {
+    display:flex;
+    width: 120px;
+    height: 40px;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #3882f6;
+    border-radius: 10px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.block2 {
+    height: 55vh;
+    background-color: aqua;
+}
+
+.block2 .header {
+    height: 15vh;
+    /* margin-bottom: -3vh; */
+}
+
+.block2 .header h2 {
+    font-size: 36px;
+    font-weight: 1000;
+    margin: auto;
+}
+
+.imagebox {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.imagebox .image {
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    height: 34vh;
+    font-size: 18px;
+}
+
+.imagebox img {
+    height: 200px;
+    border: 3px solid blue;
+    border-radius: 10px;
+
+}
+
+.block3 {
+    display:flex;
+    flex-direction: column;
+    height: 45vh;
+    background-color: darkblue;
+    color: aquamarine;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: lighter;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.block3 p {
+    font-weight: bold;
+    font-style: normal;
+}
+
+.block4 {
+    display: flex;
+    height: 30vh;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display:flex;
+    height: 15vh;
+    width: 100%;
+    background-color: #3882f6;
+    border-radius: 10px;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+}
+
+.container .text p {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+button.footercta {
+    /* border: solid white 2px; 
+    This border somehow stops the button from animating. 
+    Also note that the buttons appear to start in depressed state and click makes them come back up.*/
+    width: 160px;
+}
+
