@@ -32,9 +32,15 @@ let botPick = (getComputerChoice(1,4))
 let playerSelection = prompt('Type "r", "p", or "s" to make your choice!');
 
 //Convert playerSelection to lowercase, and convert the respective characters to the appropriate number for comparison.
+let playerSelection = playerSelection.toLowerCase()
 
-function confirmSelection() {
-    if (playerSelection === 1) 
+let playerSelection = (playerSelection =='r') ? 1 :
+    (playerSelection == 'p') ? 2 :
+    (playerSelection == 's') ? 3 :
+
+
+function confirmSelection() 
+    if (playerSelection === 1) {
         alert('You picked rock.');
     } 
     else if (playerSelection === 2) {
@@ -46,3 +52,5 @@ function confirmSelection() {
     else {
         alert('That\'s not a valid selection');
     }
+
+confirmSelection
