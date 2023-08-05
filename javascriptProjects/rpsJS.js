@@ -60,3 +60,40 @@ function confirmSelection() {
 
 confirmSelection()
 
+/* 
+Rock = 1
+Paper = 2
+Scissors = 3
+*/
+
+function compare(player, bot) {
+    if      (player == 1 && bot == 1) {
+        alert('The bot also chose rock. It\'s a draw!')
+    } 
+    else if (player == 2 && bot == 1) {
+        alert('The bot chose rock. You win! :D')
+    } 
+    else if (player == 3 && bot == 1) {
+        alert('The bot chose rock. You lose :(')
+    }
+    else if (player == 1 && bot == 2) {
+        alert('The bot chose paper. You lose :(')
+    }
+    else if (player == 2 && bot == 2) {
+        alert('The bot also chose paper. It\'s a draw!')
+    }
+    else if (player == 3 && bot == 2) {
+        alert('The bot chose paper. You win! :D')
+    }
+    else if (player == 1 && bot == 3) {
+        alert('The bot chose scissors. You win!')
+    }
+    else if (player == 2 && bot == 3) {
+        alert('The bot chose scissors. You lose :(')
+    }
+    else if (player == 3 && bot == 3) {
+        alert('The bot also chose scissors. It\'s a draw!')
+    }
+}
+
+compare(playerSelection, botPick)
