@@ -97,3 +97,7 @@ function compare(player, bot) {
 }
 
 compare(playerSelection, botPick)
+
+//Gives buttons event listeners
+
+const rock = document.querySelector('#rock')
