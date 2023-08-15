@@ -15,7 +15,8 @@ h1 {
 
 #status {
     display: flex;
-    height: 200px;
+    flex: 1 1 0;
+    height: 300px;
     width: 80%;
     justify-content: center;
     align-items: center;
@@ -61,6 +62,10 @@ h1 {
     width: 150px;
     height: 150px;
     background-color: pink;
+}
+
+.rpsButton {
+    
 }
 
 .buttonContainer {
