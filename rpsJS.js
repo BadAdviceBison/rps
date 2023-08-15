@@ -45,11 +45,37 @@ function updateCounter() {
 }
 
 function scoreCheck() {
-    if (playerScore === 5) {
+    if (playerScore === 1) {
         document.getElementById('status').innerText = 'Congratulations! \n\n You\'ve saved yourself from the clutches of a TechnoTyrant!'
-    } else if (botScore === 5) {
+        addRestartButton()
+    } else if (botScore === 1) {
         document.getElementById('status').innerText = 'Oh no! You\'ve been condemned to a life of servitude! Unless...'
+        addRestartButton()
     }
+}
+
+const restartButton = document.createElement('button')
+
+function addRestartButton() {
+    restartButton.classList.add('restartButton')
+    if (playerScore === 1) {
+    restartButton.innerText = 'Dunk on the TechnoDork again?'
+    } else if (botScore === 1) {
+    restartButton.innerText = 'Salvation..?'
+    }
+    const statusBox = document.getElementById('statusBox')
+    statusBox.appendChild(restartButton)
+    restartButton.addEventListener('click', startOver)
+}
+
+
+
+function startOver() {
+    playerScore = 0
+    botScore = 0
+    document.getElementById('status').innerText = 'Defeat your robotic overlord \n and earn your freedom!'
+    statusBox.removeChild(restartButton)
+    updateCounter()
 }
 
 /* 

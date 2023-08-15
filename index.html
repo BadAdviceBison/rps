@@ -8,12 +8,14 @@
 </head>
 <body>
     <h1>Hello!</h1>
-    <div id="status">Defeat your robotic overlord <br> and earn your freedom!</div> <!-- CONSIDER USING document.createElement TO DYNAMICALLY ADD STATUS MESSAGE-->
+    <div id="statusBox">
+        <div id="status">Defeat your robotic overlord <br> and earn your freedom!</div> <!-- CONSIDER USING document.createElement TO DYNAMICALLY ADD STATUS MESSAGE-->
+    </div>
     <div class="counterContainer">
         <div id="counterPlayer" class="counter"></div>
         <div id="counterBot" class="counter"></div>
     </div>
-    <div class="buttonContainer">
+    <div id="buttonContainer">
         <button id="rock" class="rpsButton" type="button">Rock</button>
         <button id="paper" class="rpsButton" type="button">Paper</button>
         <button id="scissors" class="rpsButton" type="button">Scissors</button>

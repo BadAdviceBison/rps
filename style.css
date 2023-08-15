@@ -64,16 +64,30 @@ h1 {
     background-color: pink;
 }
 
-.rpsButton {
-    
-}
-
-.buttonContainer {
+#buttonContainer {
     display: flex;
     width: 80%;
     margin: auto;
     justify-content: space-between;
     align-items: center;
+}
+
+.rpsButton {
+    
+}
+
+
+
+.restartButton {
+    display: flex;
+    width: 50%;
+    height: 100px;
+    margin: 16px auto;
+    justify-content: center;
+    align-items: center;
+    background-color:gray;
+    color: yellow;
+    font: 24px bold;
 }
 /* ***DO THIS LATER FOR BUTTON ANIMATION***
 .onPress { 
