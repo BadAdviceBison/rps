@@ -10,24 +10,26 @@ Rock = 1
 Paper = 2
 Scissors = 3
 */
+let playerScore = 0;
+let botScore = 0;
+let playerSelection = 0;
+
+//Make button background blue on click for player select, red for bot reveal, purple for bot reveal tie, maybe add small delays for effect.
+
+const rock = document.querySelector('#rock')
+rock.addEventListener('click', () => playerSelection = 1);
+
+const paper = document.querySelector('#paper')
+paper.addEventListener('click', () => playerSelection = 2);
+
+const scissors = document.querySelector('#scissors')
+scissors.addEventListener('click', () => playerSelection = 3);
 
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
     }
 
 let botPick = getComputerChoice(1,4)
-
-// alert('Welcome to Rock Paper Scissors')
-
-let playerSelection = prompt('Welcome to Rock Paper Scissors!\n\nType "r", "p", or "s" to make your choice.');
-
-//Convert playerSelection to lowercase, and convert the respective characters to the appropriate number for comparison.
-
-function pLower(newVal) {
-    playerSelection = newVal.toLowerCase()
-}
-
-pLower(playerSelection)
 
 function pConvert(newVal2) {
     if (newVal2 == 'r') {
@@ -99,5 +101,3 @@ function compare(player, bot) {
 compare(playerSelection, botPick)
 
 //Gives buttons event listeners
-
-const rock = document.querySelector('#rock')

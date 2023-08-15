@@ -14,16 +14,35 @@ h1 {
 }
 
 #status {
-    height: 250px;
+    display: flex;
+    height: 200px;
     width: 80%;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+    color: blueviolet;
     margin: 16px auto;
+    text-align: center;
 }
 
-#counter {
-    width: 50%;
+.counterContainer {
+    display: flex;
+    margin: 16px auto;
+    justify-content: center;
+    width: 60%;
+
+}
+
+.counter {
+    display: flex;
+    flex: auto;
+    width: 25%;
     height: 50px;
     color: greenyellow;
-    font-size: 36
+    font-size: 36px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
 }
 
 #rock {
@@ -51,8 +70,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
 }
-
-.onPress {
+/* ***DO THIS LATER FOR BUTTON ANIMATION***
+.onPress { 
     scale: 1.1;
-    transition:
-}
+} */
