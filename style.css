@@ -1,4 +1,5 @@
 * {
+    background-color: black;
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -8,6 +9,7 @@
 
 h1 {
     margin: 16px 0px;
+    padding-bottom: 5px;
     text-align: center;
     font-size: 48px;
     color:chartreuse;
@@ -24,6 +26,10 @@ h1 {
     color: blueviolet;
     margin: 16px auto;
     text-align: center;
+}
+
+#statusBox {
+    border: none;
 }
 
 .counterContainer {
@@ -46,34 +52,23 @@ h1 {
     justify-content: center;
 }
 
-#rock {
-    width: 150px;
-    height: 150px;
-    background-color: pink;
-}
-
-#paper {
-    width: 150px;
-    height: 150px;
-    background-color: pink;
-}
-
-#scissors {
-    width: 150px;
-    height: 150px;
-    background-color: pink;
-}
+ 
 
 #buttonContainer {
     display: flex;
     width: 80%;
-    margin: auto;
+    margin: 16px auto;
     justify-content: space-between;
     align-items: center;
+    border: none;
 }
 
 .rpsButton {
-    
+    font: bold 24px black;
+    width: 150px;
+    height: 150px;
+    background-color: greenyellow;
+    border: 4px solid red;
 }
 
 

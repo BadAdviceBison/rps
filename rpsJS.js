@@ -1,6 +1,7 @@
 let playerScore = 0;
 let botScore = 0;
 let playerSelection = 0;
+let botPick = 0;
 
 updateCounter()
 
@@ -9,8 +10,6 @@ updateCounter()
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
     }
-
-let botPick = 0
 
 const rock = document.querySelector('#rock')
 rock.addEventListener('click', () => {
