@@ -45,10 +45,10 @@ function updateCounter() {
 }
 
 function scoreCheck() {
-    if (playerScore === 1) {
+    if (playerScore === 3) {
         document.getElementById('status').innerText = 'Congratulations! \n\n You\'ve saved yourself from the clutches of a TechnoTyrant!'
         addRestartButton()
-    } else if (botScore === 1) {
+    } else if (botScore === 3) {
         document.getElementById('status').innerText = 'Oh no! You\'ve been condemned to a life of servitude! Unless...'
         addRestartButton()
     }
@@ -58,9 +58,9 @@ const restartButton = document.createElement('button')
 
 function addRestartButton() {
     restartButton.classList.add('restartButton')
-    if (playerScore === 1) {
+    if (playerScore === 3) {
     restartButton.innerText = 'Dunk on the TechnoDork again?'
-    } else if (botScore === 1) {
+    } else if (botScore === 3) {
     restartButton.innerText = 'Salvation..?'
     }
     const statusBox = document.getElementById('statusBox')
