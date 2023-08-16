@@ -1,7 +1,8 @@
 let playerScore = 0;
 let botScore = 0;
 let playerSelection = 0;
-let botPick = 0;
+let botSelection = 0;
+
 
 updateCounter()
 
@@ -12,31 +13,41 @@ function getComputerChoice(min, max) {
     }
 
 const rock = document.querySelector('#rock')
+
 rock.addEventListener('click', () => {
+    refreshButtons()
     playerSelection = 1
-    botPick = getComputerChoice(1,4)
-    compare(playerSelection, botPick)
+    botSelection = getComputerChoice(1,4)
+    compare(playerSelection, botSelection)
     scoreCheck()
     })
 
 const paper = document.querySelector('#paper')
+
 paper.addEventListener('click', () => {
+    refreshButtons()
     playerSelection = 2
-    botPick = getComputerChoice(1,4)
-    compare(playerSelection, botPick)
+    botSelection = getComputerChoice(1,4)
+    compare(playerSelection, botSelection)
     scoreCheck()
 })
 
 const scissors = document.querySelector('#scissors')
+
 scissors.addEventListener('click', () => {
+    refreshButtons()
     playerSelection = 3
-    botPick = getComputerChoice(1,4)
-    compare(playerSelection, botPick)
+    botSelection = getComputerChoice(1,4)
+    compare(playerSelection, botSelection)
     scoreCheck()
 })
 
 const buttons = document.querySelectorAll('.rpsButton')
 buttons.forEach(button => button.addEventListener('click', updateCounter))
+
+function refreshButtons() {
+    buttons.forEach(button => button.classList.remove('playerSelect', 'botSelect', 'eachSelect'))
+}
 
 function updateCounter() {
     document.getElementById('counterPlayer').innerText = `Player: ${playerScore}`
@@ -85,36 +96,42 @@ Scissors = 3
 
 function compare(player, bot) {
     if      (player == 1 && bot == 1) {
-        alert('The bot also chose rock. It\'s a draw!')
+        rock.classList.add('eachSelect')
     } 
     else if (player == 2 && bot == 1) {
-        alert('The bot chose rock. You win! :D')
+        paper.classList.add('playerSelect')
+        rock.classList.add('botSelect')
         playerScore += 1
     } 
     else if (player == 3 && bot == 1) {
-        alert('The bot chose rock. You lose :(')
+        scissors.classList.add('playerSelect')
+        rock.classList.add('botSelect')
         botScore += 1
     }
     else if (player == 1 && bot == 2) {
-        alert('The bot chose paper. You lose :(')
+        rock.classList.add('playerSelect')
+        paper.classList.add('botSelect')
         botScore += 1
     }
     else if (player == 2 && bot == 2) {
-        alert('The bot also chose paper. It\'s a draw!')
+        paper.classList.add('eachSelect')
     }
     else if (player == 3 && bot == 2) {
-        alert('The bot chose paper. You win! :D')
+        scissors.classList.add('playerSelect')
+        paper.classList.add('botSelect')
         playerScore += 1
     }
     else if (player == 1 && bot == 3) {
-        alert('The bot chose scissors. You win!')
+        rock.classList.add('playerSelect')
+        scissors.classList.add('botSelect')
         playerScore += 1
     }
     else if (player == 2 && bot == 3) {
-        alert('The bot chose scissors. You lose :(')
+        paper.classList.add('playerSelect')
+        scissors.classList.add('botSelect')
         botScore += 1
     }
     else if (player == 3 && bot == 3) {
-        alert('The bot also chose scissors. It\'s a draw!')
+        scissors.classList.add('eachSelect')
     }
 }
