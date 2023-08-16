@@ -15,31 +15,31 @@ function getComputerChoice(min, max) {
 const rock = document.querySelector('#rock')
 
 rock.addEventListener('click', () => {
-    refreshButtons()
     playerSelection = 1
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
+    setTimeout(refreshButtons, '1000')
     })
 
 const paper = document.querySelector('#paper')
 
 paper.addEventListener('click', () => {
-    refreshButtons()
     playerSelection = 2
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
+    setTimeout(refreshButtons, '1000')
 })
 
 const scissors = document.querySelector('#scissors')
 
 scissors.addEventListener('click', () => {
-    refreshButtons()
     playerSelection = 3
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
+    setTimeout(refreshButtons, '1000')
 })
 
 const buttons = document.querySelectorAll('.rpsButton')
