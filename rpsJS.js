@@ -3,47 +3,55 @@ let botScore = 0;
 let playerSelection = 0;
 let botSelection = 0;
 
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
 
+const buttons = document.querySelectorAll('.rpsButton')
+const restartButton = document.createElement('button')
+
+bindButtons()
 updateCounter()
 
-//Make button background blue on click for player select, red for bot reveal, purple for bot reveal tie, maybe add small delays for effect.
+//Note to self: ORDER OF OPERATIONS. Remember the bindButtons updateCounter conundrum...
 
 function getComputerChoice(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
     }
 
-const rock = document.querySelector('#rock')
+function bindButtons () {
+    rock.addEventListener('click', choiceRock)
+    paper.addEventListener('click', choicePaper)
+    scissors.addEventListener('click', choiceScissors)
+    buttons.forEach(button => button.addEventListener('click', updateCounter))
+}
 
-rock.addEventListener('click', () => {
+function choiceRock() {
     playerSelection = 1
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
     setTimeout(refreshButtons, '1000')
-    })
+    updateCounter()
+}
 
-const paper = document.querySelector('#paper')
-
-paper.addEventListener('click', () => {
+function choicePaper() {
     playerSelection = 2
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
     setTimeout(refreshButtons, '1000')
-})
-
-const scissors = document.querySelector('#scissors')
-
-scissors.addEventListener('click', () => {
+    updateCounter()
+}
+    
+function choiceScissors() {
     playerSelection = 3
     botSelection = getComputerChoice(1,4)
     compare(playerSelection, botSelection)
     scoreCheck()
     setTimeout(refreshButtons, '1000')
-})
-
-const buttons = document.querySelectorAll('.rpsButton')
-buttons.forEach(button => button.addEventListener('click', updateCounter))
+    updateCounter()
+}
 
 function refreshButtons() {
     buttons.forEach(button => button.classList.remove('playerSelect', 'botSelect', 'eachSelect'))
@@ -64,9 +72,14 @@ function scoreCheck() {
     }
 }
 
-const restartButton = document.createElement('button')
+function unbindButtons() {
+    rock.removeEventListener('click', choiceRock)
+    paper.removeEventListener('click', choicePaper)
+    scissors.removeEventListener('click', choiceScissors)
+}
 
-function addRestartButton() {
+function addRestartButton() { //Also disables rps buttons
+    unbindButtons()
     restartButton.classList.add('restartButton')
     if (playerScore === 3) {
     restartButton.innerText = 'Dunk on the TechnoDork again?'
@@ -78,14 +91,13 @@ function addRestartButton() {
     restartButton.addEventListener('click', startOver)
 }
 
-
-
 function startOver() {
     playerScore = 0
     botScore = 0
     document.getElementById('status').innerText = 'Defeat your robotic overlord \n and earn your freedom!'
     statusBox.removeChild(restartButton)
     updateCounter()
+    bindButtons()
 }
 
 /* 
